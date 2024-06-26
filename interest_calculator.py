@@ -46,4 +46,6 @@ state = st.selectbox("State", interest_data['STATE'].unique())
 start_date = st.date_input("Start Date")
 end_date = st.date_input("End Date")
 
-if st.button("Calculate
+if st.button("Calculate Interest"):
+    interest_owed = calculate_interest(principal, state, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'))
+    st.write(f"Interest Owed: ${interest_owed:.2f}")
